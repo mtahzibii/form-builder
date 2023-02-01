@@ -19,8 +19,16 @@ export function AddNewField({ setShowAddNewField, fields, setFields }) {
  const handleSubmit = async (e) => {
   e.preventDefault();
   console.log(values);
-  setFields({ ...fields, values });
+  console.log(fields);
+  let field_data = {
+   title: values.display_name,
+   type: values.type,
+   required: values.isrequired,
+   weight: values.weight,
+  };
+  setFields({ ...fields, [values.object_name]: field_data });
   setShowAddNewField(false);
+  console.log(fields);
  };
 
  return (

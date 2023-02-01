@@ -44,6 +44,7 @@ export default function Home() {
     </div>
     {showAddNewField && (
      <AddNewField
+      key={Date.now()}
       setShowAddNewField={setShowAddNewField}
       fields={fields}
       setFields={setFields}
